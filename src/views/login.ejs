@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= etiqueta %></title>
+    <%- include('partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('partials/navigation.ejs') %>
+
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <div class="card shadow">
+            <div class="card-header bg-dark text-white text-center">
+              <h2 class="mb-0">Iniciar Sesión</h2>
+            </div>
+            <div class="card-body">
+              <form method="POST" action="/login">
+                <% if (mensaje) { %>
+                  <div class="alert alert-danger">
+                    <%= mensaje %>
+                  </div>
+                <% } %>
+
+                <div class="mb-3">
+                  <label for="usuario" class="form-label">Usuario</label>
+                  <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Tu usuario" required />
+                </div>
+
+                <div class="mb-3">
+                  <label for="contrasena" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Tu contraseña" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('partials/scripts.ejs') %>
+    <%- include('partials/footers.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= title_menu %> </title>
+    <%- include('Partials/head') %>
+</head>
+<body>
+    <%- include('Partials/navegation') %>
+
+    <main class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+    <div class="container mt-5">
+        <h1> Bienvenidos Vista de Creacion de Usuario </h1>
+        <h2> Gestion de Usuario </h2>
+
+        <form action="/autenticacion/registro" method="post" id="formRegistro">
+
+            <!-- ===== PASO 1 ===== -->
+            <div id="paso-1" class="paso-seccion">
+                <h4> 1. Datos Personales (Identificacion) </h4>
+                <div class="mb-3">
+                    <label> Tipo de Documento </label>
+                    <select name="tipoDocumento" class="form-control" id="tipoDocumento" required>
+                        <option value="Cedula"> Cedula de Cuidadania </option>
+                        <option value="Pasaporte"> Pasaporte </option>
+                        <option value="TI"> Tarjeta de Identidad </option>
+                        <option value="CE"> Cedula de Extranjeria </option>
+                    </select>
+                </div>
+                <label> Numero del Documento </label>
+                <input type="text" name="numeroDocumento" class="form-control" id="numeroDocumento" placeholder="Digite su documento" required>  
+            </div>
+            <button type="button" class="btn btn-primary" onclick="siguientePaso(2)">Siguiente</button>
+
+           <!-- ===== PASO 2 ===== -->
+            <div id="paso-2" class="paso-seccion"></div>
+                <h4> 2.Datos Personales y nombres </h4>
+                <p class="text-muted"> ingresar sus nombres y apellidos tal como apertece en su documento </p>
+
+                <div class="row">
+                    <div class-"col-md-6 mb-3">
+                        <input type="text" name="primerNombre" class="form-control" id="primerNombre"
+                         placeholder="Digite su primer nombre" required>            
+                    </div>
+
+                    
+          
+                    <div class-"col-md-6 mb-3">
+                        <input type="text" name="segundoNombre" class="form-control" id="segundoNombre" placeholder="Digite su segundo nombre" required>            
+                    </div>
+                </div>
+                <br>
+                
+                <div class="row">
+                    <div class-"col-md-6 mb-3">
+                        <input type="text" name="primerApellido" class="form-control" id="primerApellido" placeholder="Digite su primer apellido" required>            
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class-"col-md-6 mb-3">
+                        <input type="text" name="segundoApellido" class="form-control" id="segundoApellido" placeholder="Digite su segundo apellido" required>            
+                    </div>
+                </div>
+
+                <br>
+                <div class-"mb-3">
+                    <label>Fecha de nacimiento</label>
+                     <input type="date" name="fechaNacimiento" class="form-control" id="fechaNacimiento" placeholder="Seleccione su fechaNacimiento" required>
+                    
+                </div>
+
+
+                </div>
+
+
+
+
+        </form>
+    </div>
+    <%- include('Partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= etiqueta %></title>
+    <%- include('partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('partials/navigation.ejs') %>
+
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+              <h2 class="mb-0">Formulario de Contacto</h2>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required />
+                </div>
+                <div class="mb-3">
+                  <label for="asunto" class="form-label">Asunto</label>
+                  <input type="text" class="form-control" name="asunto" placeholder="Asunto" />
+                </div>
+                <div class="mb-3">
+                  <label for="mensaje" class="form-label">Mensaje</label>
+                  <textarea class="form-control" name="mensaje" rows="4" placeholder="Escribe tu mensaje"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('partials/scripts.ejs') %>
+    <%- include('partials/footers.ejs') %>
+  </body>
+</html>

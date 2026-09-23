@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= etiqueta %></title>
+    <%- include('partials/head.ejs') %>
+  </head>
+  <body>
+    <%- include('partials/navigation.ejs') %>
+
+    <main class="container vh-100 d-flex justify-content-center align-items-center">
+      <div class="card w-50 shadow">
+        <div class="card-header text-center bg-success text-white">
+          <h2>Menú Principal</h2>
+        </div>
+        <div class="card-body text-center">
+          <p class="fs-5">Has iniciado sesión correctamente</p>
+          <a href="/login" class="btn btn-danger">Cerrar Sesión</a>
+        </div>
+      </div>
+    </main>
+
+    <%- include('partials/scripts.ejs') %>
+    <%- include('partials/footers.ejs') %>
+  </body>
+</html>
